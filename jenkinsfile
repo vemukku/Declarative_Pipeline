@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'cd Declarative_Pipeline & mvm insatll'
+                bat 'cd Declarative_Pipeline & mvn insatll'
 
             }
         }
