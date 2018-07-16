@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>Declarative_Pipeline</groupId>
+    <artifactId>AppName</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Maven Tomcat War</name>
+	<url>https://github.com/vemukku/Declarative_Pipeline</url>
+	<properties>
+        <build.number>SNAPSHOT</build.number>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sourceJdk>1.7</sourceJdk>
+        <targetJdk>1.7</targetJdk>
+    </properties>
+    <build>
+	    <sourceDirectory>my-app/src/main/java/com/mycompany/app/</sourceDirectory>
+	    <plugins>
+	        <plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+			    <configuration>
+				    <source>1.7</source>
+				    <target>1.7</target>
+			    </configuration>			
+		    </plugin>
+		    <plugin>
+		        <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+		    <plugin>
+		        <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <preparationGoals>clean install</preparationGoals>
+                </configuration>
+            </plugin>
+	    </plugins>
+    </build>
+	<dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.5</version>
+        </dependency>
+		<dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-artifact</artifactId>
+            <version>3.5</version>
+        </dependency>
+		<dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+            <version>3.5</version>
+		</dependency>
+    </dependencies>
+</project>
