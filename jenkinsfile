@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'Declarative_Pipeline & mvm clean install'
+                bat 'cd Declarative_Pipeline & mvn clean install'
 
             }
 		
